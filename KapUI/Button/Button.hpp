@@ -27,10 +27,39 @@ namespace KapEngine
             void onMouseStay() override;
             void onMouseExit() override;
 
+            //text setters
             void setText(std::string const &text);
             void setTextPosition(Tools::Vector2 const &pos);
             void setTextColor(Tools::Color const &color);
-            void setBackground(std::string const &path, Tools::Rectangle const &rect);
+            
+			//button setters
+			void setNormalColor(Tools::Color const &color) {
+				_defaultColor = color;
+			}
+
+			void setHoverColor(Tools::Color const &color) {
+				_hoverColor = color;
+			}
+
+			void setClickColor(Tools::Color const &color) {
+				_clickedColor = color;
+			}
+
+			//button getters
+			Tools::Color getNormalColor() const {
+				return _defaultColor;
+			}
+
+			Tools::Color getHoverColor() const {
+				return _hoverColor;
+			}
+
+			Tools::Color getClickColor() const {
+				return _clickedColor;
+			}
+
+			//background setter
+			void setBackground(std::string const &path, Tools::Rectangle const &rect);
 
             Events::EventAction &getOnClick() { return _onClick; }
 
