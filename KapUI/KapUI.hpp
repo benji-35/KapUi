@@ -13,6 +13,9 @@
 #define KAPUI_VERSION "0.1"
 
 #define IS_KAPUI_VERSION(x) (KAPUI_VERSION == x)? true : false
+#define IS_MAX_KAPUI_VERSION(x, Y) (KAPUI_VERSION_MAJOR < x)? true : (KAPUI_VERSION_MAJOR > X)? false : (KAPUI_VERSION_MINOR <= Y)? true : false
+#define IS_MIN_KAPUI_VERSION(x, Y) (KAPUI_VERSION_MAJOR < x)? false : (KAPUI_VERSION_MAJOR > X)? true : (KAPUI_VERSION_MINOR < Y)? false : true
+
 
 namespace KapEngine {
     class Component;
