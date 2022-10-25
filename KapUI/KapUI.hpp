@@ -12,6 +12,8 @@
 #define KAPUI_VERSION_MINOR 1
 #define KAPUI_VERSION "0.1"
 
+#define IS_KAPUI_VERSION(x) (KAPUI_VERSION == x)? true : false
+
 namespace KapEngine {
     class Component;
     namespace UI {
