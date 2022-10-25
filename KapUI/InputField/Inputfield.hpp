@@ -5,8 +5,8 @@
 ** Inputfield
 */
 
-#ifndef INPUTFIELD_HPP_
-#define INPUTFIELD_HPP_
+#ifndef KAPUI_INPUTFIELD_HPP_
+#define KAPUI_INPUTFIELD_HPP_
 
 #include "KapEngine.hpp"
 

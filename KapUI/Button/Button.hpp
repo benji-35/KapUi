@@ -5,8 +5,8 @@
 ** Button
 */
 
-#ifndef BUTTON_HPP_
-#define BUTTON_HPP_
+#ifndef KAPUI_BUTTON_HPP_
+#define KAPUI_BUTTON_HPP_
 
 #include "KapEngine.hpp"
 #include "KapEngineEvents.hpp"

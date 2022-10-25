@@ -1,4 +1,4 @@
-# KapUi
+# KapUi [V 0.1]
 User Interface for KapEngine
 
 ## Documentation
