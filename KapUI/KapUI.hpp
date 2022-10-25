@@ -12,6 +12,14 @@
 #define KAPUI_VERSION_MINOR 1
 #define KAPUI_VERSION "0.1"
 
+namespace KapEngine {
+    class Component;
+    namespace UI {
+        class Button;
+        class InputField;
+    }
+}
+
 #ifndef KAPUI_BUTTON_HPP_
     #include "Button/Button.hpp"
 #endif
