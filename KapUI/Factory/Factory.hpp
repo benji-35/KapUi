@@ -5,8 +5,8 @@
 ** Factory
 */
 
-#ifndef FACTORY_HPP_
-#define FACTORY_HPP_
+#ifndef KAPUI_FACTORY_HPP_
+#define KAPUI_FACTORY_HPP_
 
 #include "KapUI.hpp"
 
@@ -36,4 +36,4 @@ namespace KapEngine {
 
 }
 
-#endif /* !FACTORY_HPP_ */
+#endif /* !KAPUI_FACTORY_HPP_ */

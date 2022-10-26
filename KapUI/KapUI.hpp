@@ -33,4 +33,8 @@ namespace KapEngine {
     #include "InputField/Inputfield.hpp"
 #endif
 
+#ifndef KAPUI_FACTORY_HPP_
+    #include "Factory/Factory.hpp"
+#endif
+
 #endif /* !KAPUI_HPP_ */
