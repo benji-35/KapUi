@@ -30,6 +30,21 @@ namespace KapEngine {
 
                     return result;
                 }
+
+                static std::shared_ptr<Inputfield> createInputfield(std::shared_ptr<GameObject> go) {
+                    auto result = std::make_shared<Inputfield>(go);
+                    go->addComponent(result);
+
+                    return result;
+                }
+
+                static std::shared_ptr<Inputfield> createInputfield(GameObject &go) {
+                    auto gGo = go.getScene().getGameObject(go.getId());
+                    auto result = std::make_shared<Inputfield>(gGo);
+                    gGo->addComponent(result);
+
+                    return result;
+                }
         };
 
     }
