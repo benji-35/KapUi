@@ -12,7 +12,7 @@
 #define KAPUI_VERSION_MINOR 1
 #define KAPUI_VERSION "0.1"
 
-#define IS_KAPUI_VERSION(x, y) (KAPUI_VERSION != x)? false : (KAPUI_VERSION_MINOR != y)? false : true
+#define IS_KAPUI_VERSION(x, y) (KAPUI_VERSION_MAJOR != x)? false : (KAPUI_VERSION_MINOR != y)? false : true
 #define IS_MAX_KAPUI_VERSION(x, y) (KAPUI_VERSION_MAJOR < x)? true : (KAPUI_VERSION_MAJOR > x)? false : (KAPUI_VERSION_MINOR <= y)? true : false
 #define IS_MIN_KAPUI_VERSION(x, y) (KAPUI_VERSION_MAJOR < x)? false : (KAPUI_VERSION_MAJOR > x)? true : (KAPUI_VERSION_MINOR < y)? false : true
 
