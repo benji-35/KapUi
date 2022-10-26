@@ -21,7 +21,7 @@ namespace KapEngine {
     class Component;
     namespace UI {
         class Button;
-        class InputField;
+        class Inputfield;
     }
 }
 
