@@ -16,20 +16,6 @@ namespace KapEngine {
 
         class KapUiFactory {
             public:
-                static std::shared_ptr<Button> createButton(std::shared_ptr<GameObject> go, std::string text = "Button") {
-                    auto result = std::make_shared<Button>(go, text);
-                    go->addComponent(result);
-
-                    return result;
-                }
-
-                static std::shared_ptr<Button> createButton(GameObject &go, std::string text = "Button") {
-                    auto gGo = go.getScene().getGameObject(go.getId());
-                    auto result = std::make_shared<Button>(gGo, text);
-                    gGo->addComponent(result);
-
-                    return result;
-                }
 
                 static std::shared_ptr<Button> createButton(std::shared_ptr<GameObject> object, std::string text,
                                                           Tools::Color color = Tools::Color::white(),
@@ -41,6 +27,12 @@ namespace KapEngine {
                     result->setTextColor(textColor);
 
                     return result;
+                }
+
+                static std::shared_ptr<Button> createButton(GameObject &go, std::string text,
+                                                          Tools::Color color = Tools::Color::white(),
+                                                          Tools::Color textColor = Tools::Color::black()) {
+                    return createButton(go.getScene().getGameObject(go.getId()), text, color, textColor);
                 }
 
                 static std::shared_ptr<Button> createButton(std::shared_ptr<GameObject> object, std::string text,
@@ -55,6 +47,13 @@ namespace KapEngine {
                     result->getOnClick().registerAction(callback);
 
                     return result;
+                }
+
+                static std::shared_ptr<Button> createButton(GameObject& object, std::string text,
+                                                          std::function<void()> callback,
+                                                          Tools::Color color = Tools::Color::white(),
+                                                          Tools::Color textColor = Tools::Color::black()) {
+                    return createButton(object.getScene().getGameObject(object.getId()), text, callback, color, textColor);
                 }
 
                 static std::shared_ptr<Inputfield> createInputfield(std::shared_ptr<GameObject> go, Inputfield::InputType inputTye = Inputfield::InputType::TEXT, std::string const& placeHolder = "Enter text here...") {
