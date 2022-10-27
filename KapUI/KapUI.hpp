@@ -9,8 +9,8 @@
 #define KAPUI_HPP_
 
 #define KAPUI_VERSION_MAJOR 0
-#define KAPUI_VERSION_MINOR 101
-#define KAPUI_VERSION "0.101"
+#define KAPUI_VERSION_MINOR 102
+#define KAPUI_VERSION "0.102"
 
 #define IS_KAPUI_VERSION(x, y) (KAPUI_VERSION_MAJOR != x)? false : (KAPUI_VERSION_MINOR != y)? false : true
 #define IS_MAX_KAPUI_VERSION(x, y) (KAPUI_VERSION_MAJOR < x)? true : (KAPUI_VERSION_MAJOR > x)? false : (KAPUI_VERSION_MINOR <= y)? true : false
