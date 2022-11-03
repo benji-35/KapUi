@@ -2,18 +2,18 @@
 ** EPITECH PROJECT, 2022
 ** KapUi
 ** File description:
-** Toogle
+** Toggle
 */
 
 #include "KapEngineUi.hpp"
-#include "Toogle.hpp"
+#include "Toggle.hpp"
 #include "KapEngineEvents.hpp"
 
 #if KAPUI_BETA
 
     using namespace KapEngine;
 
-    UI::Toogle::Toogle(std::shared_ptr<GameObject> go) : Component(go, "Toggle") {
+    UI::Toggle::Toggle(std::shared_ptr<GameObject> go) : Component(go, "Toggle") {
         //create background + toggle
         _bgImg = std::make_shared<Image>(go);
         _toggleImg = std::make_shared<Image>(go);
@@ -32,9 +32,9 @@
         }
     }
 
-    UI::Toogle::~Toogle() {}
+    UI::Toggle::~Toggle() {}
 
-    void UI::Toogle::onUpdate() {
+    void UI::Toggle::onUpdate() {
         if (_overed && getInput().getKeyDown(KapEngine::Events::Key::MOUSE_LEFT)) {
             _toggled = !_toggled;
             if (_toggled) {
@@ -45,15 +45,15 @@
         }
     }
 
-    void UI::Toogle::onMouseEnter() {
+    void UI::Toggle::onMouseEnter() {
         _overed = true;
     }
 
-    void UI::Toogle::onMouseExit() {
+    void UI::Toggle::onMouseExit() {
         _overed = false;
     }
 
-    void UI::Toogle::onStart() {
+    void UI::Toggle::onStart() {
         _toggled = _startToggled;
         _toggleImg->setActive(_toggled);
     }

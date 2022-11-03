@@ -40,7 +40,7 @@ namespace KapEngine {
 #if KAPUI_BETA
 
     #ifndef KAPUI_TOOGLE_HPP_
-        #include "Toogle/Toogle.hpp"
+        #include "Toggle/Toggle.hpp"
     #endif
 
 #endif

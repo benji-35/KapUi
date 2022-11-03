@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2022
 ** KapUi
 ** File description:
-** Toogle
+** Toggle
 */
 
 #ifndef KAPUI_TOOGLE_HPP_
@@ -19,10 +19,10 @@
         namespace UI
         {
 
-            class Toogle : public Component {
+            class Toggle : public Component {
                 public:
-                    Toogle(std::shared_ptr<GameObject> go);
-                    ~Toogle();
+                    Toggle(std::shared_ptr<GameObject> go);
+                    ~Toggle();
 
                     void onStart() override;
                     void onUpdate() override;
