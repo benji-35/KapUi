@@ -69,6 +69,19 @@ namespace KapEngine {
                 static std::shared_ptr<Inputfield> createInputfield(GameObject &go, Inputfield::InputType inputTye = Inputfield::InputType::TEXT, std::string const& placeHolder = "Enter text here...") {
                     return createInputfield(go.getScene().getGameObject(go.getId()));
                 }
+        
+                #if KAPUI_BETA
+    
+                    static std::shared_ptr<Toggle> createToggle(GameObject &go, bool toggleValue = false) {
+                        auto result = std::make_shared<Toggle>(go);
+                        go->addComponent(result);
+
+                        result->setStartToggled(toggleValue);
+
+                        return result;
+                    }
+
+                #endif
         };
 
     }
