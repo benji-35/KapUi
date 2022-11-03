@@ -73,6 +73,10 @@ namespace KapEngine {
                 #if KAPUI_BETA
     
                     static std::shared_ptr<Toggle> createToggle(GameObject &go, bool toggleValue = false) {
+                        return createToggle(go.getScene().getGameObject(go.getId()), toggleValue);
+                    }
+
+                    static std::shared_ptr<Toggle> createToggle(std::shared_ptr<GameObject> go, bool toggleValue = false) {
                         auto result = std::make_shared<Toggle>(go);
                         go->addComponent(result);
 
