@@ -8,7 +8,7 @@
 #ifndef KAPUI_FACTORY_HPP_
 #define KAPUI_FACTORY_HPP_
 
-#include "../KapUI.hpp"
+#include "KapUI/KapUI.hpp"
 
 namespace KapEngine {
 

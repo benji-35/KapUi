@@ -37,6 +37,14 @@ namespace KapEngine {
     #include "InputField/Inputfield.hpp"
 #endif
 
+#if KAPUI_BETA
+
+    #ifndef KAPUI_TOOGLE_HPP_
+        #include "Toogle/Toogle.hpp"
+    #endif
+
+#endif
+
 #ifndef KAPUI_FACTORY_HPP_
     #include "Factory/Factory.hpp"
 #endif
