@@ -9,7 +9,7 @@
 #define KAPUI_TOOGLE_HPP_
 
 #include "KapEngine.hpp"
-#include "KapUISettings.hpp"
+#include "KapUI/KapUISettings.hpp"
 
 #if KAPUI_BETA
 

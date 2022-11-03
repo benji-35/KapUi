@@ -5,7 +5,9 @@
 ** Toogle
 */
 
+#include "KapEngineUi.hpp"
 #include "Toogle.hpp"
+#include "KapEngineEvents.hpp"
 
 #if KAPUI_BETA
 
@@ -33,7 +35,7 @@
     UI::Toogle::~Toogle() {}
 
     void UI::Toogle::onUpdate() {
-        if (_overed && getInput().getKeyDown(KapEngine::Input::MOUSE_LEFT)) {
+        if (_overed && getInput().getKeyDown(KapEngine::Events::Key::MOUSE_LEFT)) {
             _toggled = !_toggled;
             if (_toggled) {
                 _toggleImg->setActive(true);
