@@ -52,15 +52,8 @@ void KapEngine::UI::Inputfield::onFixedUpdate() {
                 val = "";
             }
         } else if (val != "" && _type == InputType::IPV4) {
-            if (__stringIsNumber(val)) {
-                if (_content.size() == 2 || _content.size() == 6 || _content.size() == 10) {
-                    val += ".";
-                } else if (_content.size() >= 15) {
-                    val = "";
-                }
-            } else {
+            if (val != "." && !__stringIsNumber(val))
                 val = "";
-            }
         }
 
         if (val != "") {
