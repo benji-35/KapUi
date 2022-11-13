@@ -30,7 +30,6 @@ void KapEngine::UI::Inputfield::onFixedUpdate() {
     //check remove content
     if (getInput().getKeyDown(Events::Key::BACK) || getInput().getKeyDown(Events::Key::BACKSPACE)) {
         _content.resize(_content.size() - 1);
-        Debug::log("new inputfield contrent: " + _content);
     } else {
         std::string val = __getInput();
         if (val != "\n") {
@@ -91,7 +90,7 @@ void KapEngine::UI::Inputfield::__updateTexts() {
     try {
         children = ((Transform &)getGameObject().getTransform()).getChildren();
     } catch(...) {
-        Debug::error("[INPUT FIELD] Failed to get children of inputfield " + getGameObject().getName());
+        DEBUG_ERROR("[INPUT FIELD] Failed to get children of inputfield " + getGameObject().getName());
         return;
     }
 
@@ -109,7 +108,7 @@ void KapEngine::UI::Inputfield::__updateTexts() {
                     auto &txt = (UI::Text &)children[i]->getComponent("Text");
                     txt.setText(__getFormatedText());
                 } catch(...) {
-                    Debug::error("[INPUT FIELD] Failed to set content of text inputfield " + getGameObject().getName());
+                    DEBUG_ERROR("[INPUT FIELD] Failed to set content of text inputfield " + getGameObject().getName());
                 }
             } else if (children[i]->getName() == "Placeholder") {
                 children[i]->setActive(false);
@@ -157,7 +156,7 @@ void KapEngine::UI::Inputfield::__init(std::shared_ptr<GameObject> go) {
         txtPhd.setTextColor(Tools::Color::grey());
         txtTxt.setTextColor(Tools::Color::black());
     } catch(...) {
-        Debug::error("Failed to get transform of text and placeholder in inputfield creation");
+        DEBUG_ERROR("Failed to get transform of text and placeholder in inputfield creation");
     }
 }
 
@@ -174,7 +173,7 @@ void KapEngine::UI::Inputfield::setPlaceholderText(std::string const& text) {
             }
         }
     } catch(...) {
-        Debug::error("Failed to set text placeholder of " + getGameObject().getName());
+        DEBUG_ERROR("Failed to set text placeholder of " + getGameObject().getName());
     }
 }
 
@@ -184,6 +183,6 @@ void KapEngine::UI::Inputfield::setBackground(std::string const& path, Tools::Re
         img.setPathSprite(path);
         img.setRectangle(rect);
     } catch(...) {
-        Debug::error("[BUTTON] failed to get image component");
+        DEBUG_ERROR("[BUTTON] failed to get image component");
     }
 }

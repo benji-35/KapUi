@@ -39,7 +39,7 @@ void KapEngine::UI::Button::__init(std::shared_ptr<GameObject> go) {
         auto &tr = (Transform &)txtObj->getTransform();
         tr.setParent(go);
     } catch(...) {
-        Debug::error("[BUTTON] cannot get text component of text object from parent " + go->getName());
+        DEBUG_ERROR("[BUTTON] cannot get text component of text object from parent " + go->getName());
     }
     __updateImageColor();
 }
@@ -51,7 +51,7 @@ void KapEngine::UI::Button::__updateImageColor() {
         img.setColor(_currentColor);
 
     } catch(...) {
-        Debug::error("failed to change color button");
+        DEBUG_ERROR("failed to change color button");
     }
 }
 
@@ -60,7 +60,7 @@ void KapEngine::UI::Button::setText(std::string const& text) {
         auto &tr = (Transform &)getGameObject().getTransform();
         std::vector<std::shared_ptr<GameObject>> children = tr.getChildren();
         if (children.size() == 0) {
-            Debug::error("Cannot set text of button " + getGameObject().getName());
+            DEBUG_ERROR("Cannot set text of button " + getGameObject().getName());
             return;
         }
         for (std::size_t i = 0; i < children.size(); i++) {
@@ -70,7 +70,7 @@ void KapEngine::UI::Button::setText(std::string const& text) {
             }
         }
     } catch(...) {
-        Debug::error("Cannot set text of button " + getGameObject().getName());
+        DEBUG_ERROR("Cannot set text of button " + getGameObject().getName());
     }
 }
 
@@ -79,7 +79,7 @@ void KapEngine::UI::Button::setTextColor(Tools::Color const& color) {
         auto &tr = (Transform &)getGameObject().getTransform();
         std::vector<std::shared_ptr<GameObject>> children = tr.getChildren();
         if (children.size() == 0) {
-            Debug::error("Cannot set text of button " + getGameObject().getName());
+            DEBUG_ERROR("Cannot set text of button " + getGameObject().getName());
             return;
         }
         for (std::size_t i = 0; i < children.size(); i++) {
@@ -89,7 +89,7 @@ void KapEngine::UI::Button::setTextColor(Tools::Color const& color) {
             }
         }
     } catch(...) {
-        Debug::error("Cannot set text of button " + getGameObject().getName());
+        DEBUG_ERROR("Cannot set text of button " + getGameObject().getName());
     }
 }
 
@@ -99,7 +99,7 @@ void KapEngine::UI::Button::setBackground(std::string const& path, Tools::Rectan
         img.setPathSprite(path);
         img.setRectangle(rect);
     } catch(...) {
-        Debug::error("[BUTTON] failed to get image component");
+        DEBUG_ERROR("[BUTTON] failed to get image component");
     }
 }
 
@@ -141,7 +141,7 @@ void KapEngine::UI::Button::setTextPosition(Tools::Vector2 const& pos) {
         auto &tr = (Transform &)getGameObject().getTransform();
         std::vector<std::shared_ptr<GameObject>> children = tr.getChildren();
         if (children.size() == 0) {
-            Debug::error("Cannot set text of button " + getGameObject().getName());
+            DEBUG_ERROR("Cannot set text of button " + getGameObject().getName());
             return;
         }
         for (std::size_t i = 0; i < children.size(); i++) {
@@ -153,6 +153,6 @@ void KapEngine::UI::Button::setTextPosition(Tools::Vector2 const& pos) {
             }
         }
     } catch(...) {
-        Debug::error("Cannot set text of button " + getGameObject().getName());
+        DEBUG_ERROR("Cannot set text of button " + getGameObject().getName());
     }
 }
